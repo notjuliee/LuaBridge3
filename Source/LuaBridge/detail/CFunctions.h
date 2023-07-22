@@ -827,6 +827,8 @@ struct function<void, ArgsPack, Start>
         }
 #endif
 
+        if (lua_status(L) == LUA_YIELD)
+            return -1;
         return 0;
     }
 };
